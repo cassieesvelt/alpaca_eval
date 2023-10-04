@@ -1,0 +1,11 @@
+azure:
+  prompt_template: "alpaca_eval_gpt4/alpaca_eval.txt"
+  fn_completions: "openai_completions"
+  completions_kwargs:
+    deployment_id: "gpt35t"
+    model_name: "gpt-35-turbo-16k"
+    max_tokens: 50
+    temperature: 0
+    openai_api_base: https://oaifmtest.openai.azure.com/
+  fn_completion_parser: "ranking_parser"
+  batch_size: 1
