@@ -235,9 +235,7 @@ def _openai_completion_helper(
                     logging.exception("Prompt is already longer than max context length. Error:")
                     raise e
             elif "content management" in str(e).lower():
-                choice_dict = {"text": "Prompt was filtered :( here is dummy response.", "index": 0, "logprobs": None, "finish_reason": "length", "total_tokens": 0}
-                choice_json = json.dumps(choice_dict)
-                choices = [choice_json]
+                choices = [{"text": "Prompt was filtered :( here is dummy response.", "index": 0, "logprobs": None, "finish_reason": "length", "total_tokens": 0}]
                 break
             else:
                 if "rate limit" in str(e).lower():
