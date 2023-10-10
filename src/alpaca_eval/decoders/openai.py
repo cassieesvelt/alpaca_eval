@@ -234,7 +234,7 @@ def _openai_completion_helper(
                 if kwargs["max_tokens"] == 0:
                     logging.exception("Prompt is already longer than max context length. Error:")
                     raise e
-            elif e.error_code == "content_filter":
+            elif "content management" in str(e).lower():
                 choices = [{"text": "\n\nPrompt was filtered :( here is dummy response.", "index": 0, "logprobs": None, "finish_reason": "length", "total_tokens": 0}]
                 break
             else:
