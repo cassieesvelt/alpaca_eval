@@ -241,6 +241,7 @@ def _openai_completion_helper(
                 if "rate limit" in str(e).lower():
                     logging.warning(f"Hit request rate limit; retrying...")
                 else:
+                    logging.warning("testing git commit...")
                     logging.warning(f"Unknown error {e}. \n It's likely a rate limit so we are retrying...")
                 if openai_organization_ids is not None and len(openai_organization_ids) > 1:
                     openai.organization = random.choice(
