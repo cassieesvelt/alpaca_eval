@@ -156,7 +156,7 @@ def openai_completions(
 
     # flatten the list and select only the text
     completions_all = [completion for completion_batch in completions for completion in completion_batch]
-    completions_text = [completion.text for completion in completions_all]
+    completions_text = [completion['text'] for completion in completions_all]
 
     price = [
         completion["total_tokens"] * _get_price_per_token(model_name)
