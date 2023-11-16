@@ -35,7 +35,7 @@ setuptools.setup(
     install_requires=[
         "python-dotenv",
         "datasets",
-        "openai",
+        "openai==0.28.1",
         "pandas",
         "tiktoken>=0.3.2",
         "fire",
